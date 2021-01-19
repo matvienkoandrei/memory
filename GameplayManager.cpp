@@ -26,9 +26,16 @@ void GameplayManager::restartGame()
     }
 }
 
-CardsFieldModel* GameplayManager::getCardsFieldModel() const
+bool GameplayManager::registerInQml(QQmlContext* context)
 {
-    return m_fieldModel;
+    if (!m_fieldModel)
+    {
+        return false;
+    }
+    context->setContextProperty("gameplayManager", this);
+    context->setContextProperty("cardsFieldModel", m_fieldModel);
+
+    return true;
 }
 
 // Q_PROPERTY

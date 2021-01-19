@@ -37,7 +37,6 @@
         <file>Cards/4.jpg</file>
         <file>Cards/40.jpg</file>
         <file>Cards/41.jpg</file>
-        <file>Cards/42.jpg</file>
         <file>Cards/43.jpg</file>
         <file>Cards/44.jpg</file>
         <file>Cards/45.jpg</file>
@@ -53,5 +52,6 @@
         <file>Cards/0.jpg</file>
         <file>GameOverPopup.qml</file>
         <file>ButtonIcons/check.png</file>
+        <file>Cards/42.jpg</file>
     </qresource>
 </RCC>

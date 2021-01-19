@@ -2,6 +2,7 @@
 #define GAMEPLAYMANAGER_H
 
 #include <QObject>
+#include <QQmlContext>
 
 #include <memory>
 
@@ -32,7 +33,7 @@ public:
 
     Q_INVOKABLE void restartGame();
 
-    CardsFieldModel* getCardsFieldModel() const;
+    bool registerInQml(QQmlContext* context);
 
     // Q_PROPERTY
     int attemptsCount() const;

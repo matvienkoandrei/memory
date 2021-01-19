@@ -17,15 +17,15 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
+    if (!gameplayManager.registerInQml(engine.rootContext()))
+        return EXIT_FAILURE;
+
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
-
-    engine.rootContext()->setContextProperty("gameplayManager", &gameplayManager);
-    engine.rootContext()->setContextProperty("cardsFieldModel", gameplayManager.getCardsFieldModel());
 
     engine.load(url);
 
